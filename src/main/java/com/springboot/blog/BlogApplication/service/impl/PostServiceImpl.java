@@ -2,6 +2,7 @@ package com.springboot.blog.BlogApplication.service.impl;
 
 import com.springboot.blog.BlogApplication.entity.Post;
 import com.springboot.blog.BlogApplication.exception.ResourceNotFoundException;
+import com.springboot.blog.BlogApplication.payload.CommentDto;
 import com.springboot.blog.BlogApplication.payload.PostDto;
 import com.springboot.blog.BlogApplication.payload.PostResponse;
 import com.springboot.blog.BlogApplication.repository.PostRepository;
@@ -102,6 +103,8 @@ public class PostServiceImpl implements PostService {
         Post post = postRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Post", "id", id));
         postRepository.delete(post);
     }
+
+
 
     //Converted Entity into DTO
     private PostDto mapToDto(Post post){
