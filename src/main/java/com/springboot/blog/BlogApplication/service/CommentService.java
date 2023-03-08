@@ -1,5 +1,6 @@
 package com.springboot.blog.BlogApplication.service;
 
+import com.springboot.blog.BlogApplication.entity.Comment;
 import com.springboot.blog.BlogApplication.payload.CommentDto;
 import org.aspectj.bridge.ICommand;
 
@@ -11,4 +12,8 @@ public interface CommentService {
     List<CommentDto> getCommentsByPostId(long postId);
 
     CommentDto getCommentById(Long postId, Long Id);
+
+    CommentDto updateComment(Long postId, Long commentId, CommentDto commentRequest);
+
+    void deleteComment(Long postId, Long commentId);
 }
